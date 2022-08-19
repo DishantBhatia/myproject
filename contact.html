@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/contactstyle.css">
+    <link rel="icon" type="icon/image" href="img/icon picture.jpg">
+    <title>Contact us</title>
+</head>
+<body>
+    <h1> Contact Us page: </h1>
+
+        <!-- Header Start -->
+    <header class="header">
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+		        <li><a href="index.html#about">About</a></li>
+		        <li><a href="index.html#predators">Prey & Predators</a></li>
+		        <li><a href="index.html#gallery">Gallery</a></li>
+		        <li><a href="index.html#count">World Count</a></li>
+                <li><a href="honesty.html">Honesty Declaration</a></li>
+		        <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <div class="brand-name">
+            <a href="index.html">Rainbow Trout</a>
+       </div>
+
+    
+    </header>
+    <!-- Header End -->
+    <div class="content">
+    <div class="pic1">
+    <img src="img/fish5.jpg" alt="pic" height="600px" width="400px">
+    </div>
+    <div class="wrap">
+        <h2>To Reach Out To Us... Fill in the info.</h2>
+        <div id="error_message"></div>
+  
+        <form action="https://formspree.io/f/mpznzpnb"
+        method="POST" id="myform" onsubmit="return validate();sendEmail()">
+          <div class="input_field">
+              <input type="text" name="FirstName" placeholder="FirstName" id="fname" required>
+          </div>
+
+          <div class="input_field">
+              <input type="text" name="LastName" placeholder="LastName" id="lname" required >
+          </div>
+
+        <div class="input_field">
+            <input type="text" name="email" placeholder="Email" id="email" required >
+        </div>
+
+        <div class="input_field">
+            <input type="text" name="date" placeholder="Date(in format dd-mm-yy)" id="date" required >
+        </div>
+
+          <div class="input_field">
+              <input type="text" name="phone" placeholder="Phone" id="phone" required >
+          </div>
+          
+          <div class="input_field">
+              <textarea placeholder="Message" name="message" id="message" required ></textarea>
+          </div>
+
+          <div class="btn">
+              <input type="submit">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/contactus.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
+    function sendEmail(){
+        Email.send({
+            Host : "smtp.gmail.com",
+            Username : "dishant2132@gmail.com",
+            Password : "dishant2002",
+            To : 'dishant2132@gmail.com',
+            From : document.getElementById("email").value,
+            Subject : "Form Enquiry!!!",
+            Body : "First Name: "+ document.getElementById("fname").value
+                + "<br> Last Name: "+document.getElementById("lname").value
+                + "<br> Email: "+document.getElementById("email").value
+                + "<br> Date: "+document.getElementById("date").value
+                + "<br> Phone: "+document.getElementById("phone").value
+                + "<br> message: "+document.getElementById("message").value
+        }).then(
+        message => alert("Message sent successfully!")
+        );
+        }
+    </script>
+   
+</body>
+</html>

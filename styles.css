@@ -1,0 +1,669 @@
+/* Designing overall page*/
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Barlow+Condensed:wght@300&family=Caveat:wght@600&family=Josefin+Sans:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Uchen&display=swap");
+/*Setting Up CSS Box Model*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+}
+
+/*Setting Up Body*/
+body {
+  margin: 0;
+  line-height: 1.5;
+  background-color: #abc8e9;
+  font-family: Architects Daughter;
+  font-weight: 400;
+}
+
+/*Designing Container Classes*/
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.align-items-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.justify-content-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.section-title {
+  font-family: Josefin Sans;
+  font-size: 28px;
+  color: #121e61;
+  font-weight: 700px;
+  position: relative;
+  -webkit-animation-name: title;
+          animation-name: title;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-iteration-count: 2;
+          animation-iteration-count: 2;
+  animation-direction: alternate-reverse;
+}
+
+@-webkit-keyframes title {
+  0% {
+    background-color: #a6dfe9;
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    background-color: #6fb7e0;
+    left: 200px;
+    top: 0px;
+  }
+  50% {
+    background-color: #7f77ce;
+    left: 200px;
+    top: 0px;
+  }
+  75% {
+    background-color: #5c89ce;
+    left: 0px;
+    top: 0px;
+  }
+  100% {
+    background-color: #75b3cf;
+    left: 0px;
+    top: 0px;
+  }
+}
+
+@keyframes title {
+  0% {
+    background-color: #a6dfe9;
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    background-color: #6fb7e0;
+    left: 200px;
+    top: 0px;
+  }
+  50% {
+    background-color: #7f77ce;
+    left: 200px;
+    top: 0px;
+  }
+  75% {
+    background-color: #5c89ce;
+    left: 0px;
+    top: 0px;
+  }
+  100% {
+    background-color: #75b3cf;
+    left: 0px;
+    top: 0px;
+  }
+}
+
+/* Designing Header */
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.header.fixed {
+  background-color: #ffffff;
+  position: fixed;
+}
+
+.header .fish-name {
+  padding: 0 15px;
+}
+
+.header .fish-name a {
+  text-decoration: none;
+  font-size: 30px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.header.fixed .fish-name a {
+  color: #000000;
+}
+
+.header .nav-toggle {
+  width: 40px;
+  height: 34px;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  display: none;
+}
+
+.header.fixed .nav-toggle {
+  border-color: #000000;
+}
+
+.header .nav-toggle span {
+  height: 1px;
+  display: block;
+  width: 16px;
+  background-color: #ffffff;
+  position: relative;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.header .nav-toggle span:before,
+.header .nav-toggle span:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.header.fixed .nav-toggle span,
+.header.fixed .nav-toggle span:before,
+.header.fixed .nav-toggle span:after {
+  background-color: #000000;
+}
+
+.header .nav-toggle span:before {
+  -webkit-transform: translateY(-6px);
+          transform: translateY(-6px);
+}
+
+.header .nav-toggle span:after {
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+}
+
+.header .nav {
+  padding: 0 15px;
+}
+
+.header .nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header .nav ul li {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.header .nav ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: yellow;
+  padding: 25px 0;
+  display: block;
+  -webkit-transition: all 0.7s ease-in;
+  transition: all 0.7s ease-in;
+}
+
+.header.fixed .nav ul li a {
+  color: #000000;
+}
+
+.header.fixed .nav ul li a:hover,
+.header .nav ul li a:hover {
+  color: white;
+}
+
+/* Designing Home section */
+.home-section {
+  min-height: 100vh;
+  background-image: url("../img/fish3.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  padding: 0 15px;
+}
+
+.home-section ::before {
+  content: '';
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  left: 1;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  color: #530d94;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.home-section .row {
+  min-height: 100vh;
+}
+
+.home-section .home-content {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  max-width: 100%;
+  text-align: right;
+  margin-left: 90vh;
+}
+
+.home-section .home-content h4 {
+  font-size: 20px;
+  color: #e9e7e5;
+  margin-right: 90vh;
+}
+
+.home-section .home-content h1 {
+  font-size: 50px;
+  margin: 0;
+  color: #e9e7e5;
+  letter-spacing: 10px;
+  font-weight: 900;
+  margin-right: 90vh;
+  margin-top: 5em;
+}
+
+/* Designing About section */
+.about-section {
+  padding: 80px 0 0;
+  margin: 10px;
+  display: block;
+}
+
+.about-section .section-title {
+  margin-bottom: 1em;
+}
+
+.about-section .section-title h1 {
+  font-family: Josefin Sans;
+  font-size: 40px;
+  color: #121e61;
+  font-weight: 700px;
+  position: relative;
+}
+
+.about-section .para1 {
+  padding: 5px;
+  margin-bottom: 1em;
+  font-family: Uchen;
+  font-size: 18px;
+  font-weight: 100px;
+}
+
+.about-section video {
+  height: 400px;
+  width: 750px;
+}
+
+.about-section .caption {
+  line-height: 0.5;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  font-style: oblique;
+  text-decoration: underline;
+  margin-left: 13em;
+}
+
+/* Designing Prey & Predators Section */
+.predators-section {
+  padding: 80px 0 0;
+  margin: 10px;
+  line-height: 2.0;
+}
+
+.predators-section .list-predator {
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.predator-heading p {
+  font-style: oblique;
+  padding: 10 0px;
+  font-weight: 400;
+}
+
+.predators-section .major-content {
+  padding: 2em;
+}
+
+.predators-section .major-content h2 {
+  font-weight: 800;
+  padding: 0 10px;
+  font-display: inherit;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #144094), color-stop(70%, #3657c4));
+  background-image: linear-gradient(#144094 30%, #3657c4 70%);
+  color: white;
+}
+
+.predators-section .major-content ul {
+  padding: 1em;
+  font-size: 20px;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #1da6e6), color-stop(70%, #74b5eb));
+  background-image: linear-gradient(#1da6e6 30%, #74b5eb 70%);
+}
+
+/* Designing Gallery Section */
+.gallery-section {
+  padding: 80px 0 0;
+}
+
+.gallery-section .collage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.gallery-section .collage .pics {
+  margin: 10px;
+  padding: 1em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gallery-section .collage .pics h4 {
+  font-family: monospace;
+  font-size: 20px;
+  margin: 10px;
+  text-align: center;
+}
+
+.gallery-section .video2 {
+  -webkit-animation-name: ani1;
+          animation-name: ani1;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+}
+
+@-webkit-keyframes ani1 {
+  0% {
+    background-color: #97d0f1;
+  }
+  25% {
+    background-color: #26a6d8;
+  }
+  50% {
+    background-color: #344fe9;
+  }
+  100% {
+    background-color: #abc8e9;
+  }
+}
+
+@keyframes ani1 {
+  0% {
+    background-color: #97d0f1;
+  }
+  25% {
+    background-color: #26a6d8;
+  }
+  50% {
+    background-color: #344fe9;
+  }
+  100% {
+    background-color: #abc8e9;
+  }
+}
+
+.gallery-section .video2 h2 {
+  font-size: 35px;
+  font-family: Caveat;
+  color: #12355c;
+  text-align: center;
+  padding: 1em;
+}
+
+.gallery-section .video2 video {
+  height: 500px;
+  width: 1000px;
+}
+
+.gallery-section .pics:hover img{
+  filter:grayscale(100%);
+  transform: scale(1);
+}
+
+.gallery-section .pics{
+  position:relative;
+  cursor:pointer;
+  overflow:hidden;
+}
+
+.gallery-section .pics .overlay{
+  position: absolute;
+  left:0;
+  top:0;
+  padding:15px;
+  height: 100%;
+  width: 100%;
+  background-color:rgba(0, 0, 0, 0.555);
+  display: flex;
+  align-items: flex-end;
+  transition: all 0.5s ease;
+  opacity:0;
+}
+
+.gallery-section .pics:hover .overlay{
+  opacity:1;
+}
+.gallery-section .pics .overlay h4{
+  color:white;
+  font-size:20px;
+  margin:0;
+  transform: translateX(50px);
+  transition: all 1s ease;
+}
+
+.gallery-section .pics:hover .overlay h4{
+  transform: translateX(0);
+}
+/* Designing World Count Section */
+.count-section {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 20px;
+  padding: 1em;
+}
+
+table caption {
+  font-size: 22px;
+  font-family: cursive;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+table, tr, th {
+  margin: auto;
+  padding: 1rem 2rem;
+  border: 2px solid #220c72;
+  border-collapse: collapse;
+}
+
+table td {
+  margin: auto;
+  padding: 1rem 2rem;
+  border: 2px dashed #220c72;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th {
+  background-image: linear-gradient(60deg, #0f1781 30%, #343ec5 40%, #7c8ce9);
+  color: whitesmoke;
+}
+
+/*World Count Section ends here*/
+.honesty {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.honesty ul {
+  list-style: none;
+}
+
+.honesty ol {
+  list-style: none;
+}
+
+.honesty a {
+  color: teal;
+}
+
+.end {
+  font-weight: 400;
+  font-family: Uchen;
+  font-size: 28px;
+  color: #ffffff;
+  text-align: center;
+  margin: 30px 10px;
+  padding: 2em;
+  background-image: linear-gradient(40deg, #114677 40%, #4b89cf 60%);
+}
+
+.lightbox{
+	position: fixed;
+	z-index: 1099;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	background-color: rgba(0,0,0,0.7);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: zoom-out;
+	display: none;
+}
+.lightbox.open{
+	display: flex;
+}
+
+.lightbox .lightbox-img{
+	display: flex;
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	padding:40px 0;
+}
+.lightbox .img-box{
+	position: relative;
+	cursor: auto;
+}
+.lightbox .lightbox-close{
+	height: 30px;
+	width: 30px;
+	display: block;
+	position: absolute;
+	right: 0;
+	top:10px;
+	font-size: 30px;
+	color:#ffffff;
+	text-align: center;
+	line-height: 26px;
+	cursor: zoom-out;
+}
+.lightbox .lightbox-caption{
+	color:#ffffff;
+	font-size: 16px;
+	font-weight: 600;
+	position: absolute;
+	left:0;
+	bottom: 10px;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.lightbox .lightbox-caption .lightbox-category{
+	padding-right: 50px;
+}
+.lightbox .lightbox-controls .prev,
+.lightbox .lightbox-controls .next{
+	position: absolute;
+	height: calc(100% - 80px);
+	top:40px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+.lightbox .lightbox-controls .prev{
+	left:0;
+	width: 50%;
+	justify-content: flex-start;
+	padding-left: 5px;
+}
+.lightbox .lightbox-controls .next{
+	right:0;
+	width: 50%;
+	justify-content: flex-end;
+	padding-right: 5px;
+}
+
+.lightbox .lightbox-controls .prev img,
+.lightbox .lightbox-controls .next img{
+  width: 30px;
+  height: 30px;
+  padding:5px;
+  border-radius: 2px;
+  transition: all 0.5s;
+}
+.lightbox .lightbox-controls .prev:hover img,
+.lightbox .lightbox-controls .next:hover img{
+background-color: rgba(0,0,0,0.5);
+}
+
+/*# sourceMappingURL=styles.css.map */
